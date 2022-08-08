@@ -1,31 +1,20 @@
-// variaveis do formulario
-var name = document.querySelector("#exampleInputName");
-var gender = document.querySelector("#form-user-creat [name=gender]:checked");
-var gender = document.querySelector("#exampleInputGenderF");
-var birth = document.querySelector("#exampleInputBirth");
-var country = document.querySelector("#exampleInputCountry");
-var email = document.querySelector("#exampleInputEmail");
-var password = document.querySelector("#exampleInputPassword");
-var photo = document.querySelector("#exampleInputFile");
-var admin = document.querySelector("exampleInputAdmin");
-
 var fields = document.querySelectorAll("#form-user-create [name]");
+var user = {}; 
 
-fields.forEach((field, index)=>{
+fields.forEach(function(field, index){
 
-    if (field.name == "gender"){
+    if (field.name === "gender") {
 
-        if(field.checked){
-            console.log("SIM", field)
+        if (field.checked) {
+            user[field.name] = field.value
         }
 
-    }else{
+    } else {
 
-        console.log("NÃO")
+        user[field.name] = field.value
 
     }
-    
-    
-    //console.log (field.name)
 
 });
+
+console.log(user)
